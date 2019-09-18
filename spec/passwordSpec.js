@@ -19,4 +19,10 @@ describe('password_is_valid', function(){
         let check = password_is_valid('Hello1012');
         expect(check).toBe(true);
     })
+    it('should check if password contains lowercase, uppercase, numbers and is longer than 8 letters', function(){
+        let check = function(){
+            throw ('password must contain uppercase and lowercase letters and at least one number')
+        };
+        expect(check).toThrow('password must contain uppercase and lowercase letters and at least one number');
+    })
  })

@@ -22,27 +22,24 @@
 
        function password_is_ok(password) {
 
-        let exp1 = /^[A-Za-z0-9]{9,}$/;
+        let expect1 = /^[A-Za-z0-9]{9,}$/;
+        let expect2 = /^(?=.*[A-Z])[A-Z]+/;
+        let expect3 = /^(?=.*[a-z])[a-z]+/;
+        let expect4 = /^(?=.*[0-9])[0-9]+/;
       
-        let exp2 = /^(?=.*[A-Z])[A-Z]+/;
-      
-        let exp3 = /^(?=.*[a-z])[a-z]+/;
-      
-        let exp4 = /^(?=.*[0-9])[0-9]+/;
-      
-        if (exp1.test(password) === true && exp2.test(password) === true) {
+        if (expect1.test(password) === true && expect2.test(password) === true) {
       
           return 'password is valid';
       
         } else
       
-        if (exp1.test(password) === true && exp3.test(password) === true) {
+        if (expect1.test(password) === true && expect3.test(password) === true) {
       
           return 'password is valid';
       
         } else
       
-        if (exp1.test(password) === true && exp4.test(password) === true) {
+        if (expect1.test(password) === true && expect4.test(password) === true) {
       
           return 'password is valid'
       
