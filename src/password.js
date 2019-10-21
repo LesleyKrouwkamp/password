@@ -1,24 +1,22 @@
 
     function password_is_valid(password){
 
-        let validPass = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.{8,}$)/
-       
-        let result = validPass.test(password) 
-       
-        try {
-       
-          if(result == false) throw('password must contain uppercase and lowercase letters and at least one number');
-       
-        } catch (error) {
-       
-          console.log('Please note ' + error);
-       
+        let validPass1 = /^(?=.*[A-Z])(?=.{8,}$)/
+        let validPass2 = /^(?=.*[a-z])(?=.{8,}$)/
+        let validPass3 =/^(?=.*[0-9])(?=.{8,}$)/
+
+        if(password == ""){
+          throw new Error("please enter a password");
         }
-      
-        return result;
-       }
+        if(validPass1.test(password) == true || validPass2.test(password) == true ||validPass3.test(password) == true){
+          return true;
+        }
+       
+        else{
+           throw new Error("please enter a valid password");
+        }
 
-
+    }
 
        function password_is_ok(password) {
 
